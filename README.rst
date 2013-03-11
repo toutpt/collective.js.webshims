@@ -49,6 +49,10 @@ Webshims lib does not need every Modernizr test and supports creating a
 Webshims lib uses requireJS as a script loader, if this is included, if not
 it uses Modernizr.load/yepnope.
 
+This addon override plone.app.modernizr.custom.js resource using this one.
+If you have conflict with an other addon which does the same, you can use
+@@plone.app.modernizr.download view to build a new one with all requested
+features.
 
 How to upgrade
 ==============

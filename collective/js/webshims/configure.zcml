@@ -8,6 +8,11 @@
     name="collective.js.webshims"
     directory="resources"
     />
+  <browser:resource
+    name="plone.app.modernizr.custom.js"
+    file="resources/js/extras/modernizr-custom.js"
+    layer=".layer.Layer"
+    />
 
   <include file="upgrades.zcml"/>
 

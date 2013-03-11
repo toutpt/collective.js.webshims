@@ -1,5 +1,28 @@
 <registry>
+
     <records interface="collective.js.webshims.settings.FormsOptions"/>
     <records interface="collective.js.webshims.settings.FormsExtOptions"/>
+    <records interface="plone.app.modernizr.resources.IModernizr">
+      <value key="tests">
+        <element>canvas</element>
+        <element>audio</element>
+        <element>video</element>
+        <element>input</element>
+        <element>inputtypes</element>
+        <element>localstorage</element>
+        <element>sessionstorage</element>
+        <element>geolocation</element>
+        <element>shiv</element>
+        <element>cssclasses</element>
+        <element>addtest</element>
+        <element>prefixed</element>
+        <element>testprop</element>
+        <element>testallprops</element>
+        <element>prefixes</element>
+        <element>domprefixes</element>
+        <element>elem_track</element>
+        <element>load</element>
+      </value>
+    </records>
 
 </registry>
