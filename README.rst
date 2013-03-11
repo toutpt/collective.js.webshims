@@ -1,6 +1,12 @@
 Introduction
 ============
 
+This addon register webshims_ to Plone resource registry.
+
+version: 1.9.7
+
+About webshims
+==============
 
 
 How to install
@@ -24,3 +30,4 @@ People
 - JeanMichel FRANCOIS aka toutpt <toutpt@gmail.com>
 
 .. _documentation: http://plone.org/documentation/kb/installing-add-ons-quick-how-to
+.. _webshims: http://afarkas.github.com/webshim
