@@ -1,0 +1,5 @@
+<registry>
+    <records interface="collective.js.webshims.settings.FormsOptions"/>
+    <records interface="collective.js.webshims.settings.FormsExtOptions"/>
+
+</registry>

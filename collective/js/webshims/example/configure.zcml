@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.js.webshims">
+
+  <browser:page
+    name="example.collective.js.webshims"
+    for="*"
+    class=".webshims.Example"
+    template="webshims.pt"
+    permission="zope2.View"
+    />
+
+</configure>

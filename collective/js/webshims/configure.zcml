@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.js.webshims">
+
+  <browser:resourceDirectory
+    name="collective.js.webshims"
+    directory="resources"
+    />
+
+  <include file="upgrades.zcml"/>
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.js.webshims"
+      directory="profiles/default"
+      description='Extension profile for collective.js.webshims.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <browser:viewlet
+     name="collective.js.webshims.settings"
+     manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+     class=".settings.SettingsViewlet"
+     template="settings.pt"
+     layer=".layer.Layer"
+     permission="zope2.View"
+     />
+
+  
+</configure>

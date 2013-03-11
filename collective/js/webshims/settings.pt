@@ -1,0 +1,10 @@
+<script type="text/javascript" tal:content="string:
+  var webshimsOptions = jQuery.parseJSON('${view/js_webshimsOptions}');
+  var webshimsFormsOptions = jQuery.parseJSON('${view/js_webshimsFormsOptions}');
+  var webshimsFormsExtOptions = jQuery.parseJSON('${view/js_webshimsFormsExtOptions}');"></script>
+<script>
+    //configure
+    $.webshims.setOptions('forms', webshimsFormsOptions);
+    $.webshims.setOptions(webshimsOptions);
+    $.webshims.polyfill();
+</script>

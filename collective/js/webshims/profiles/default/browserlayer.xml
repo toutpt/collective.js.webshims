@@ -1,0 +1,4 @@
+<layers>
+    <layer name="collective.js.webshims"
+           interface="collective.js.webshims.layer.Layer" />
+</layers>
