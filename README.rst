@@ -38,7 +38,7 @@ Dependencies
 
 * collective.js.jqueryui
 * plone.app.jquery
-* plone.app.modernizr
+* plone.app.modernizr [github]
 
 Custom Modernizr build
 ----------------------

@@ -1,5 +1,6 @@
 <registry>
 
+    <records interface="collective.js.webshims.settings.PolyfillOptions"/>
     <records interface="collective.js.webshims.settings.FormsOptions"/>
     <records interface="collective.js.webshims.settings.FormsExtOptions"/>
     <records interface="plone.app.modernizr.resources.IModernizr">

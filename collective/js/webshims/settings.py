@@ -5,6 +5,41 @@ from zope import interface
 from collective.js.webshims import i18n
 from plone.app.layout.viewlets.common import ViewletBase
 from plone.registry.interfaces import IRegistry
+from zope.schema.vocabulary import SimpleVocabulary
+
+
+features_vocabulary = SimpleVocabulary.fromValues([
+    'json-storage',
+    'es5',
+    'geolocation',
+    'canvas',
+    'forms',
+    'forms-ext',
+    'mediaelement',
+    'track',
+    'details',
+])
+
+
+class PolyfillOptions(interface.Interface):
+    """options of jquery polyfill
+    http://afarkas.github.com/webshim/demos/index.html#polyfill-options
+    """
+    debug = schema.Bool(title=u"Debug mode", default=False)
+
+    features = schema.List(
+       title=u"Features",
+       required=False,
+       value_type=schema.Choice(title=u"Feature",
+                                vocabulary=features_vocabulary),
+    )
+    wait_ready = schema.Bool(title=u"Wait for ready", default=True)
+    extendNative = schema.Bool(title=u"Wait for ready", default=True)
+
+    # basePath is computed by the viewlet to use this addon
+
+    disableShivMethods = schema.Bool(title=u"Disable shiv methods",
+                                     default=True)
 
 
 class FormsOptions(interface.Interface):
@@ -52,8 +87,10 @@ class SettingsViewlet(ViewletBase):
         formsOptions = registry.forInterface(FormsOptions, check=False)
         formsExtOptions = registry.forInterface(FormsExtOptions, check=False)
 
-        self.js_webshimsFormsOptions = self.recordsToJSon(FormsOptions, formsOptions)
-        self.js_webshimsFormsExtOptions = self.recordsToJSon(FormsExtOptions, formsExtOptions)
+        self.js_webshimsFormsOptions = self.recordsToJSon(FormsOptions,
+                                                          formsOptions)
+        self.js_webshimsFormsExtOptions = self.recordsToJSon(FormsExtOptions,
+                                                             formsExtOptions)
         self.js_webshimsOptions = '{"waitReady": false}'
 
     def recordsToJSon(self, rschema, records):
